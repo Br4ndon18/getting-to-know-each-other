@@ -9,14 +9,14 @@
         body {
             font-family: Arial, sans-serif;
             text-align: center;
-            background-color: #f0f0f0;
+            background-color: #0bd4ef;
             margin: 0;
             padding: 0;
         }
 
         header {
-            background-color: #007acc;
-            color: white;
+            background-color: #cfdce4;
+            color: rgb(0, 0, 0);
             padding: 20px 0;
         }
 
@@ -45,18 +45,29 @@
             margin: 20px;
             display: inline-block;
         }
+        @keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
 
+.fade-in {
+  animation: fade-in 1s ease-in-out;
+}
     </style>
 </head>
 <body>
     <header>
-        <h1>Brandon Gutierrez</h1>
+        <h1 id="name">Brandon Gutierrez</h1>
         <p>brandongutierrez@lewisu.edu</p>
         <p>Discord:br4ndong.</p>
     </header>
-    <img class="photo" src="brandongutierrez.png" alt="Brandon Gutierrez">
-    <h2>Introduction</h2>
-    <p>
+    <img class="photo" src="c:/lewis/cpsc2000/getting-to-know-each-other/brandongutierrez.png" alt="Brandon Gutierrez">
+    <h2 class="fade-in">Introduction</h2>
+    <p class="fade-in">
         Hi,my name is Brandon Gutierrez. I was born in Joliet,Illinois and have lived here my whole life. 
         I have 2 brothers and 1 sister. I have both my parents and also have a dog called Chabelo and hes a chiuhuahua. 
         I currently am a commuter at Lewis University and am majoring in computer science. 
@@ -99,5 +110,22 @@
                     The Graphical User Interface (GUI)</a>:
         </ul>
     </section>
+    <script>
+        const nameElement = document.getElementById('name');
+        const favoriteColor = 'Blue'; 
+        
+        nameElement.addEventListener('click', () => {
+            nameElement.style.color = favoriteColor;
+        });
+    </script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const fadeInElements = document.querySelectorAll('.fade-in');
+    
+            fadeInElements.forEach((element) => {
+                element.style.animationPlayState = 'running';
+            });
+        });
+    </script>
 </body>
 </html>
